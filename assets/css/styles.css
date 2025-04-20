@@ -1,0 +1,474 @@
+:root {
+    /* New Color Palette */
+    --primary-green: #1a936f;
+    --secondary-green: #88d498;
+    --light-green: #c6dabf;
+    --dark-green: #114b5f;
+    --earth-brown: #6b4d21;
+    --sky-blue: #a8d0e6;
+    --deep-teal: #0b5351;
+    --cream: #f3e9d2;
+    
+    /* Gradients */
+    --green-gradient: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+    --earth-gradient: linear-gradient(135deg, var(--earth-brown) 0%, var(--deep-teal) 100%);
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 25px rgba(0,0,0,0.1);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.4s ease;
+    --transition-slow: 0.6s ease;
+    
+    /* Dark Mode Variables */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --text-primary: #212529;
+    --text-secondary: #495057;
+    
+    /* Dark Mode Colors */
+    --dm-bg-primary: #1a1a2e;
+    --dm-bg-secondary: #16213e;
+    --dm-text-primary: #f1f1f1;
+    --dm-text-secondary: #e2e2e2;
+    --dm-primary-green: #4ad66d;
+    --dm-secondary-green: #6aef8f;
+    --dm-shadow-color: rgba(0,0,0,0.3);
+}
+
+/* Dark Mode Styles */
+[data-theme="dark"] {
+    --bg-primary: var(--dm-bg-primary);
+    --bg-secondary: var(--dm-bg-secondary);
+    --text-primary: var(--dm-text-primary);
+    --text-secondary: var(--dm-text-secondary);
+    --primary-green: var(--dm-primary-green);
+    --secondary-green: var(--dm-secondary-green);
+    --shadow-sm: 0 1px 3px var(--dm-shadow-color);
+    --shadow-md: 0 4px 6px var(--dm-shadow-color);
+    --shadow-lg: 0 10px 25px var(--dm-shadow-color);
+    
+    background-color: var(--dm-bg-primary);
+    color: var(--dm-text-primary);
+}
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: var(--transition-medium);
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: var(--space-sm);
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+
+p {
+    margin-bottom: var(--space-sm);
+    max-width: 65ch;
+}
+
+a {
+    color: var(--primary-green);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+a:hover {
+    color: var(--dark-green);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+section {
+    padding: var(--space-xl) 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50; /* Dark green for header */
+    color: white; /* White text for contrast */
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Main Title */
+h1 {
+    font-size: 2.5em; /* Larger font size */
+    margin: 10px 0;
+}
+
+/* Sub-title */
+h2 {
+    font-size: 1.5em; /* Slightly larger than normal text */
+    margin: 5px 0;
+}
+
+/* Button Styles */
+button {
+    background-color: #5cb85c; /* Button color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 15px 30px; /* Button padding for better click area */
+    font-size: 1.2em; /* Bigger button text */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+button:hover {
+    background-color: #4cae4c; /* Darker green on hover */
+}
+
+/* Section Styles */
+section {
+    padding: 20px; /* Added padding for sections */
+    margin: 15px auto; /* Center sections with margin */
+    width: 80%; /* Center the section on the page */
+    background-color: white; /* White background for contrast */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Why It Matters Section */
+.why-it-matters {
+    display: flex;
+    justify-content: space-around; /* Spread out the sections evenly */
+    flex-wrap: wrap; /* Make it responsive */
+    margin-top: 20px; /* Space above the section */
+}
+
+/* Individual Cards */
+.card {
+    background-color: #e7f3fe; /* Light blue cards */
+    border-left: 6px solid #2196F3; /* Blue left border for emphasis */
+    padding: 15px; /* Padding inside cards */
+    margin: 10px; /* Margin between cards */
+    flex-basis: 30%; /* Each card takes 30% of the row */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for effect */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    padding: 20px 0;
+    background-color: #4CAF50; /* Matching footer color */
+    color: white; /* White text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .why-it-matters {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+    }
+    
+    .card {
+        flex-basis: 100%; /* Each card takes full width */
+    }
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Navigation */
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/earth-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Calculator Form */
+.calculator-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Cards */
+.card {
+    border: none;
+    transition: transform 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    font-weight: 600;
+}
+
+/* Results Display */
+#totalFootprint {
+    font-weight: 700;
+}
+
+/* Badge Styles */
+.badge {
+    font-size: 1rem;
+    padding: 0.5em 0.75em;
+}
+
+/* Recommendations */
+.recommendation-card {
+    border-left: 4px solid var(--primary-green);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 0 4px 4px 0;
+}
+
+/* Loading Animation */
+.loading-spinner {
+    display: none;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-green);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    padding: 1rem 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 4rem 0;
+    }
+    
+    .calculator-form {
+        padding: 1.5rem;
+    }
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Calculator Styles */
+.calculator-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.calculator-hero {
+    background: linear-gradient(rgba(0, 100, 0, 0.7), rgba(0, 100, 0, 0.7)), 
+                url('../images/calculator-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.calculator-hero h1 {
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.calculator-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.calculator-form-container {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--dark-green);
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary-green);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.25);
+}
+
+.form-row {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+}
+
+.loading-spinner {
+    display: none;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid var(--primary-green);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin: 2rem auto;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+/* Education Page */
+.accordion-button:not(.collapsed) {
+    background-color: rgba(46, 139, 87, 0.1);
+    color: var(--primary-green);
+    font-weight: 600;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(46, 139, 87, 0.25);
+}
+
+/* Additional Styles for Environmental Theme */
+h1, h2, h3 {
+    color: var(--dark-green);
+}
+
+.btn-primary {
+    background-color: var(--primary-green);
+    border-color: var(--primary-green);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-green);
+    border-color: var(--secondary-green);
+}
+.btn-secondary {
+    background-color: var(--earth-brown);
+    border-color: var(--earth-brown);
+}
+.btn-secondary:hover {
+    background-color: var(--light-green);
+    border-color: var(--light-green);
+}
+.btn-outline-primary {
+    color: var(--primary-green);
+    border-color: var(--primary-green);
+}  

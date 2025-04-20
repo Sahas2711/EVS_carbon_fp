@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainability Quiz | EcoFootprint</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">EcoFootprint</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="calculator.html">Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="education.html">Learn</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="quiz.html">Quiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow">
+                    <div class="card-header bg-success text-white">
+                        <h1 class="h3 mb-0">Sustainability Quiz</h1>
+                    </div>
+                    <div class="card-body">
+                        <div id="quizStart" class="text-center py-4">
+                            <h2 class="mb-4">Test Your Environmental Knowledge</h2>
+                            <p class="lead">Take this short quiz to assess your sustainability habits and learn how to reduce your environmental impact.</p>
+                            <button id="quizStartBtn" class="btn btn-success btn-lg mt-3">Start Quiz</button>
+                        </div>
+                        
+                        <div id="quizContainer" style="display: none;">
+                            <div class="d-flex justify-content-between mb-3">
+                                <div id="quizProgress" class="text-muted">Question 1 of 5</div>
+                            </div>
+                            
+                            <h2 id="quizQuestion" class="h4 mb-4"></h2>
+                            
+                            <div id="quizOptions" class="d-flex flex-wrap justify-content-center"></div>
+                            
+                            <div class="text-center mt-4">
+                                <button id="quizBackBtn" class="btn btn-outline-secondary me-2" style="display: none;">Back</button>
+                                <button id="quizNextBtn" class="btn btn-success" style="display: none;">Next</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>EcoFootprint</h5>
+                    <p>Helping you understand and reduce your environmental impact since 2023.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="calculator.html" class="text-white">Calculator</a></li>
+                        <li><a href="education.html" class="text-white">Education</a></li>
+                        <li><a href="blog.html" class="text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Connect</h5>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 EcoFootprint. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/chart.min.js"></script>
+    <script src="assets/js/quiz.js"></script>
+</body>
+</html>

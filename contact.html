@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | EcoFootprint</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">EcoFootprint</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculator.html">Calculator</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="education.html">Learn</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.html">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h1 class="text-center mb-4">Contact Us</h1>
+                
+                <div class="card shadow mb-5">
+                    <div class="card-body">
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <select class="form-select" id="subject" required>
+                                    <option value="" selected disabled>Select a subject</option>
+                                    <option value="question">Question about calculator</option>
+                                    <option value="feedback">Website feedback</option>
+                                    <option value="partnership">Partnership inquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-success">Send Message</button>
+                            </div>
+                        </form>
+                        
+                        <div id="formSuccess" class="alert alert-success mt-3" style="display: none;">
+                            Thank you for your message! We'll get back to you soon.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h2 class="h4 mb-3">Additional Information</h2>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <h3 class="h5">Email</h3>
+                                <p>info@ecofootprint.org</p>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <h3 class="h5">Follow Us</h3>
+                                <div class="social-links">
+                                    <a href="#" class="text-success me-2"><i class="bi bi-facebook"></i> Facebook</a>
+                                    <a href="#" class="text-success me-2"><i class="bi bi-twitter"></i> Twitter</a>
+                                    <a href="#" class="text-success"><i class="bi bi-instagram"></i> Instagram</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <h3 class="h5">Newsletter</h3>
+                            <p>Subscribe to our monthly newsletter for tips on reducing your carbon footprint and environmental news.</p>
+                            <form class="d-flex">
+                                <input type="email" class="form-control me-2" placeholder="Your email">
+                                <button class="btn btn-outline-success" type="submit">Subscribe</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>EcoFootprint</h5>
+                    <p>Helping you understand and reduce your environmental impact since 2023.</p>
+                </div>
+                <div class="col-md-3">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="calculator.html" class="text-white">Calculator</a></li>
+                        <li><a href="education.html" class="text-white">Education</a></li>
+                        <li><a href="blog.html" class="text-white">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5>Connect</h5>
+                    <a href="#" class="text-white me-2"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="text-white me-2"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 EcoFootprint. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // In a real implementation, this would send the form data to a server
+            // For this demo, we'll just show a success message
+            document.getElementById('formSuccess').style.display = 'block';
+            this.reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('formSuccess').style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
